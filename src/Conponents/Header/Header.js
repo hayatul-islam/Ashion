@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Navbar className='px-5 py-4' bg="light" expand="lg">
             <Navbar.Brand href="#home">
-                <div className='fs-3 text-black'>
+                <div style={{ fontFamily: 'Caveat' }} className='fs-3 fw-bold text-black'>
                     Ashion
                 </div>
             </Navbar.Brand>
