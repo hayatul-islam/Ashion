@@ -38,23 +38,23 @@ const Products = () => {
                     </div>
                     <div>
                         <Nav className='text-capitalize'>
-                            <Nav.Item onClick={() => setCategory('all')}>
+                            <div onClick={() => setCategory('all')}>
                                 <Nav.Link className='text-black fs-5'>All</Nav.Link>
                                 {
                                     category === 'all' && <div className='ms-3'>
                                         <hr style={{ width: '25px', padding: '1.6px 0', marginTop: '-5px', background: 'red', }} />
                                     </div>
                                 }
-                            </Nav.Item>
+                            </div>
                             {
-                                categories?.map(cate => <Nav.Item onClick={() => setCategory(cate)}>
+                                categories?.map(cate => <div onClick={() => setCategory(cate)}>
                                     <Nav.Link className='text-black fs-5'>{cate}</Nav.Link>
                                     {
                                         category === cate && <div className='ms-3'>
                                             <hr style={{ width: '40%', padding: '1.6px 0', marginTop: '-5px', background: 'red', }} />
                                         </div>
                                     }
-                                </Nav.Item>)
+                                </div>)
                             }
                         </Nav>
                     </div>

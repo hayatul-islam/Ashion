@@ -1,0 +1,33 @@
+.product {
+    position: relative;
+}
+
+.shopIcon {
+    position: absolute;
+    top: 30%;
+    left: 34%;
+}
+
+.product:hover {
+    opacity: .7;
+}
+
+.shopIcon {
+    display: none;
+}
+
+.product:hover .shopIcon {
+    display: block;
+}
+
+.shopIcon i {
+    border: 1px solid #747d87;
+    padding: 10px;
+    margin-right: 4px;
+    color: #747d87;
+    background: #fff;
+}
+
+.shopIcon i:hover {
+    cursor: pointer;
+}
