@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
-const Products = () => {
+const Products = ({ setUpdate }) => {
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -26,7 +26,6 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
-    console.log(products);
 
     return (
         <div className='py-5'>
@@ -61,7 +60,7 @@ const Products = () => {
                 </div>
                 <Row>
                     {
-                        products?.slice(0, 8).map(product => <Product key={product?.id} product={product} />)
+                        products?.slice(0, 8).map(product => <Product key={product?.id} product={product} setUpdate={setUpdate} />)
                     }
                 </Row>
             </Container>

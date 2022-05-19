@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 import StarRatings from 'react-star-ratings/build/star-ratings';
 import './Product.css';
 
-const Product = ({ product }) => {
+const Product = ({ product, setUpdate }) => {
     const { title, image, price, rating, id } = product;
     const addLocalStorage = (id) => {
         const productId = [];
@@ -13,7 +13,8 @@ const Product = ({ product }) => {
         } else {
             productId.push(...getId, id)
         }
-        localStorage.setItem("id", JSON.stringify(productId))
+        localStorage.setItem("id", JSON.stringify(productId));
+        setUpdate(true);
     }
     return (
         <Col md={3}>

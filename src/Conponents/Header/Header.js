@@ -4,11 +4,9 @@ import { Nav, Navbar } from 'react-bootstrap';
 import AddToCard from '../AddToCard/AddToCard';
 
 
-const Header = () => {
-
-    const getId = JSON.parse(localStorage.getItem("id"));
+const Header = ({ update }) => {
     const [products, setProducts] = useState([]);
-
+    const getId = JSON.parse(localStorage.getItem("id"));
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
             .then(res => res.json())
@@ -16,8 +14,7 @@ const Header = () => {
                 const filterData = data.filter(p => getId.includes(p.id));
                 setProducts(filterData);
             })
-    }, [])
-
+    }, [update])
     return (
         <Navbar className='px-5 py-4' bg="light" expand="lg">
             <Navbar.Brand href="#home">
@@ -40,7 +37,7 @@ const Header = () => {
                     <Nav.Link className='fw-bold pe-3' href="#link">Login/Register</Nav.Link>
                     <Nav.Link className='text-uppercase fw-bold pe-3 fs-5'><i class="fa-solid fa-magnifying-glass"></i></Nav.Link>
                     <Nav.Link className='text-uppercase fw-bold pe-3 fs-5' ><i class="fa-solid fa-heart"></i></Nav.Link>
-                    <AddToCard getId={getId} products={products} />
+                    <AddToCard products={products} />
                 </Nav>
             </Navbar.Collapse>
         </Navbar >

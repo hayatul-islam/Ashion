@@ -1,11 +1,18 @@
 import { Modal, Button, Nav, Badge, Row, Col, Image } from 'react-bootstrap';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-const AddToCard = ({ getId, products }) => {
+const AddToCard = ({ products }) => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [getId, setGetId] = useState([]);
+    const [update, setUpdate] = useState(false);
+    useEffect(() => {
+        const id = JSON.parse(localStorage.getItem("id"));
+        setGetId(id)
+    }, [update])
+
 
     const price = products.map(p => parseFloat(p?.price));
     const total = price?.reduce((prev, curr) => prev + curr, 0);
@@ -13,12 +20,14 @@ const AddToCard = ({ getId, products }) => {
     const handleRemove = (id) => {
         const removeId = getId?.find(e => e === id);
         const filterId = getId?.filter(id => id !== removeId);
-        localStorage.setItem("id", JSON.stringify(filterId))
+        localStorage.setItem("id", JSON.stringify(filterId));
+        setUpdate(true);
     }
 
     const handleOrder = () => {
         localStorage.removeItem("id");
         setShow(false);
+        setUpdate(true);
     }
 
     return (
