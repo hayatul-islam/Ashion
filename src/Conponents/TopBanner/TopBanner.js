@@ -9,7 +9,7 @@ const TopBanner = () => {
                 <Col md={6}>
                     <div className='women px-5'>
                         <div>
-                            <h2>Women's Fashion</h2>
+                            <h2 style={{ fontFamily: 'Cookie', fontSize: '60px' }}>Women's Fashion</h2>
                             <p className='fs-5 pt-3'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eum eligendi blanditiis doloremque?</p>
                             <NavLink className='text-uppercase text-black ps-0 fs-5'>Shop Now</NavLink>
                             <div>
