@@ -4,7 +4,17 @@ import StarRatings from 'react-star-ratings/build/star-ratings';
 import './Product.css';
 
 const Product = ({ product }) => {
-    const { title, image, price, rating } = product;
+    const { title, image, price, rating, id } = product;
+    const addLocalStorage = (id) => {
+        const productId = [];
+        const getId = new Set(JSON.parse(localStorage.getItem("id")));
+        if (!getId) {
+            productId.push(id)
+        } else {
+            productId.push(...getId, id)
+        }
+        localStorage.setItem("id", JSON.stringify(productId))
+    }
     return (
         <Col md={3}>
             <Card className='mb-3 product'>
@@ -21,7 +31,7 @@ const Product = ({ product }) => {
                 </Card.Body>
                 <div className='fs-4 shopIcon'>
                     <span><i className="fa-solid fa-heart"></i></span>
-                    <span><i className="fa-solid fa-bag-shopping"></i></span>
+                    <span onClick={() => addLocalStorage(id)}><i className="fa-solid fa-bag-shopping"></i></span>
                 </div>
             </Card>
         </Col>
