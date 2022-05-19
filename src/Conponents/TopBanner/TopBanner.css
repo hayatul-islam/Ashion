@@ -1,0 +1,41 @@
+.women {
+    background-image: url('https://i.ibb.co/NFNRyCM/womens.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 639px;
+    display: flex;
+    align-items: center;
+    background-color: #e7e3df;
+}
+
+.women p {
+    max-width: 400px;
+}
+
+.mens {
+    background-image: url('https://i.ibb.co/VJp1zfV/image.png');
+    background-color: #eedba6;
+}
+
+.kids {
+    background-image: url('https://i.ibb.co/nftSZ9Y/image.png');
+    background-color: #fbfbda;
+}
+
+.cosmetics {
+    background-image: url('https://i.ibb.co/34zQ6k1/image.png');
+    background-color: #ffe7e7;
+}
+
+.accessories {
+    background-image: url('https://i.ibb.co/CmZVy1V/image.png');
+    background-color: #ffe7e7;
+}
+
+.fashion {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 315px;
+    align-items: center;
+}
