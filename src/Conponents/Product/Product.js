@@ -1,6 +1,8 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import StarRatings from 'react-star-ratings/build/star-ratings';
+import ProductDetails from '../ProductDetails/ProductDetails';
 import './Product.css';
 
 const Product = ({ product }) => {
@@ -15,6 +17,12 @@ const Product = ({ product }) => {
         }
         localStorage.setItem("id", JSON.stringify(productId));
     }
+
+    // const navigate = useNavigate();
+    // const handleProductDetails = (id) => {
+    //     navigate(`/productDetails/${id}`);
+    // }
+
     return (
         <Col md={3}>
             <Card className='mb-3 product'>
@@ -30,8 +38,10 @@ const Product = ({ product }) => {
                     <Card.Text className='fs-4 fw-bold text-dark'>$ {price}</Card.Text>
                 </Card.Body>
                 <div className='fs-4 shopIcon'>
-                    <span><i className="fa-solid fa-heart"></i></span>
-                    <span onClick={() => addLocalStorage(id)}><i className="fa-solid fa-bag-shopping"></i></span>
+                    <div className="d-flex">
+                        <ProductDetails id={id} />
+                        <span onClick={() => addLocalStorage(id)}><i className="fa-solid fa-bag-shopping"></i></span>
+                    </div>
                 </div>
             </Card>
         </Col>
