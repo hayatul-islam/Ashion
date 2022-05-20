@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Nav, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
-const Products = ({ setUpdate }) => {
+const Products = () => {
 
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
@@ -60,7 +60,7 @@ const Products = ({ setUpdate }) => {
                 </div>
                 <Row>
                     {
-                        products?.slice(0, 8).map(product => <Product key={product?.id} product={product} setUpdate={setUpdate} />)
+                        products?.slice(0, 8).map(product => <Product key={product?.id} product={product} />)
                     }
                 </Row>
             </Container>

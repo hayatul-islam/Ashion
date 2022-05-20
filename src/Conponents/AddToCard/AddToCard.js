@@ -1,18 +1,23 @@
 import { Modal, Button, Nav, Badge, Row, Col, Image } from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 
-const AddToCard = ({ products }) => {
+const AddToCard = () => {
 
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [getId, setGetId] = useState([]);
-    const [update, setUpdate] = useState(false);
-    useEffect(() => {
-        const id = JSON.parse(localStorage.getItem("id"));
-        setGetId(id)
-    }, [update])
+    const [products, setProducts] = useState([]);
+    const getId = JSON.parse(localStorage.getItem("id"));
+    setInterval(getId, 1000)
 
+    useEffect(() => {
+        fetch('https://fakestoreapi.com/products')
+            .then(res => res.json())
+            .then(data => {
+                const filterData = data.filter(p => getId.includes(p.id));
+                setProducts(filterData);
+            })
+    }, [getId])
 
     const price = products.map(p => parseFloat(p?.price));
     const total = price?.reduce((prev, curr) => prev + curr, 0);
@@ -21,14 +26,15 @@ const AddToCard = ({ products }) => {
         const removeId = getId?.find(e => e === id);
         const filterId = getId?.filter(id => id !== removeId);
         localStorage.setItem("id", JSON.stringify(filterId));
-        setUpdate(true);
     }
 
     const handleOrder = () => {
         localStorage.removeItem("id");
         setShow(false);
-        setUpdate(true);
+        window.location.reload();
     }
+
+
 
     return (
         <div>
