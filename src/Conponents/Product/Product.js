@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 import StarRatings from 'react-star-ratings/build/star-ratings';
 import ProductDetails from '../ProductDetails/ProductDetails';
 import './Product.css';
@@ -17,11 +16,6 @@ const Product = ({ product }) => {
         }
         localStorage.setItem("id", JSON.stringify(productId));
     }
-
-    // const navigate = useNavigate();
-    // const handleProductDetails = (id) => {
-    //     navigate(`/productDetails/${id}`);
-    // }
 
     return (
         <Col md={3}>
