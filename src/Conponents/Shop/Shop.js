@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Product from '../Product/Product';
 
@@ -24,6 +25,7 @@ const Shop = () => {
                     }
                 </Row>
             </Container>
+            <Footer />
         </div>
     );
 };

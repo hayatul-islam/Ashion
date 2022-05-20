@@ -15,7 +15,7 @@ const TopBanner = () => {
                     <div className='women px-5'>
                         <div>
                             <h2 style={{ fontFamily: 'Cookie', fontSize: '60px' }}>Women's Fashion</h2>
-                            <p className='fs-5 pt-3'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi eum eligendi blanditiis doloremque?</p>
+                            <p className='fs-5 pt-3'>We provide industry-leading next-generation clinical decision support approaches that leverage the genetic information.</p>
                             <NavLink onClick={handleShop} className='text-uppercase text-black ps-0 fs-5'>Shop Now</NavLink>
                             <div>
                                 <hr style={{ width: '104px', padding: '1.6px 0', marginTop: '-5px', background: 'red', }} />

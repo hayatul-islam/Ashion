@@ -20,7 +20,7 @@ const Product = ({ product }) => {
             <Card className='mb-3 product'>
                 <Card.Img style={{ height: '400px' }} variant="top" src={image} />
                 <Card.Body className='text-center'>
-                    <Card.Title className='fs-4 mb-3'>{title.slice(0, 20)}..</Card.Title>
+                    <Card.Title className='fs-4 mb-3'>{title.slice(0, 17)}..</Card.Title>
                     <Card.Text> <StarRatings
                         rating={rating?.rate}
                         starDimension="24px"
