@@ -1,16 +1,21 @@
-import './App.css';
+import * as React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './Conponents/Header/Header';
-import Products from './Conponents/Products/Products';
-import TopBanner from './Conponents/TopBanner/TopBanner';
+import Home from "./Conponents/Home/Home";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Shop from "./Conponents/Shop/Shop";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <TopBanner />
-      <Products />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

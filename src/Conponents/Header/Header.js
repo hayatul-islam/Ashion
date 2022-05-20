@@ -1,6 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import AddToCard from '../AddToCard/AddToCard';
 
 
@@ -15,14 +16,14 @@ const Header = () => {
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mx-auto text-danger">
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Home</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Woman's</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Man's</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Shop</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Prices</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Blog</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3'>Contact</Nav.Link>
+                <Nav className="mx-auto">
+                    <NavLink to='/' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Home</NavLink>
+                    <NavLink to='/shop' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Shop</NavLink>
+                    <NavLink to='' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Woman's</NavLink>
+                    <NavLink to='' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Man's</NavLink>
+                    <NavLink to='' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Prices</NavLink>
+                    <NavLink to='' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Blog</NavLink>
+                    <NavLink to='' className='text-uppercase fw-bold pe-3 text-dark text-decoration-none'>Contact</NavLink>
                 </Nav>
                 <Nav>
                     <Nav.Link className='fw-bold pe-3' href="#link">Login/Register</Nav.Link>

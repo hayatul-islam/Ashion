@@ -32,8 +32,8 @@ const Products = () => {
             <Container>
                 <div className='d-flex justify-content-between align-item-center pb-5'>
                     <div>
-                        <h5 className='fs-3 '>New Product</h5>
-                        <hr style={{ width: '70px', padding: '2px 0', marginTop: '0px', background: 'red' }} />
+                        <h5 className='fs-1 '>New Products</h5>
+                        <hr style={{ width: '80px', padding: '2px 0', marginTop: '0px', background: 'red' }} />
                     </div>
                     <div>
                         <Nav className='text-capitalize'>
