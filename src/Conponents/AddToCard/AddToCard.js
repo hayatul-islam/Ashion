@@ -8,7 +8,6 @@ const AddToCard = () => {
     const handleShow = () => setShow(true);
     const [products, setProducts] = useState([]);
     const getId = JSON.parse(localStorage.getItem("id"));
-    setInterval(getId, 1000)
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products')
@@ -34,11 +33,9 @@ const AddToCard = () => {
         window.location.reload();
     }
 
-
-
     return (
         <div>
-            <Nav.Link onClick={handleShow} className='text-uppercase fw-bold pe-3 fs-5' ><i class="fa-solid fa-bag-shopping"></i>
+            <Nav.Link onClick={handleShow} className='text-uppercase fw-bold pe-3 fs-5' ><i className="fa-solid fa-bag-shopping"></i>
                 <Badge className='text-danger p-0' bg='none'>{getId?.length}</Badge>
             </Nav.Link>
 

@@ -27,8 +27,8 @@ const Header = () => {
                 </Nav>
                 <Nav>
                     <Nav.Link className='fw-bold pe-3' href="#link">Login/Register</Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3 fs-5'><i class="fa-solid fa-magnifying-glass"></i></Nav.Link>
-                    <Nav.Link className='text-uppercase fw-bold pe-3 fs-5' ><i class="fa-solid fa-heart"></i></Nav.Link>
+                    <Nav.Link className='text-uppercase fw-bold pe-3 fs-5'><i className="fa-solid fa-magnifying-glass"></i></Nav.Link>
+                    <Nav.Link className='text-uppercase fw-bold pe-3 fs-5' ><i className="fa-solid fa-heart"></i></Nav.Link>
                     <AddToCard />
                 </Nav>
             </Navbar.Collapse>
