@@ -3,7 +3,7 @@
 
 ## Overview
 * Local Storage products add and remove.
-* Add to cart your favorite product add and order place.
+* Add to cart add your favorite product and order place.
 * Show products details.
 
 
